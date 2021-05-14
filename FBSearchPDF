@@ -1,0 +1,39 @@
+#!/bin/sh
+
+clear
+
+sleep 1
+
+echo
+echo
+
+echo "Enter the Search"
+echo
+read search
+echo
+echo
+
+clear
+
+echo
+echo
+
+echo "Searching $search"
+
+sleep 1
+
+echo
+echo
+
+pdfgrep -i -H -n "$search" *pdf
+
+echo
+
+count=`pdfgrep -i -H -n "$search" *pdf | wc -l`
+
+echo Total number of $search matches is: $count
+
+echo 
+echo
+
+exit
